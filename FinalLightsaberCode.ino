@@ -1,8 +1,8 @@
 #include <FastLED.h>
 #include <EEPROM.h>
 
-#define BUTTON_PIN  13
-#define LED_PIN     2
+#define BUTTON_PIN  4
+#define LED_PIN     3
 
 #define BRIGHTNESS  64
 #define NUM_LEDS    265
