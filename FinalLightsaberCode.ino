@@ -44,6 +44,8 @@ void setup() {
 
 void loop() {
     int buttonState = digitalRead(BUTTON_PIN);
+    pinMode(BUTTON_PIN, OUTPUT);
+    digitalWrite(BUTTON_PIN, LOW);
 
     if (buttonState == HIGH){
       delay(200);
