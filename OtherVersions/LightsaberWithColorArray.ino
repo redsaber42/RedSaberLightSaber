@@ -44,7 +44,7 @@ void setup() {
   }
   
   // Start the saber as off, then the user can activate it
-  unsigned int off[3] = { 0, 0, 0 };
+  CRGB off = CRGB(0,0,0);
   setWholeSaberToColor(off);
   
   pinMode(BUTTON_PIN, INPUT);
@@ -73,6 +73,9 @@ void loop() {
         if (colorIndex >= numColorOptions) {
           colorIndex = 0;
         }
+
+        // Change the saber to that color
+        setWholeSaberToColor(colorOptions[colorIndex]);
 
         // And we reset these variables so we can go back to looking for clicks
         timePress = 0;
@@ -104,9 +107,9 @@ void loop() {
 }
 
 // Loop over all of the LEDs on the lightsaber and set them to the input color
-void setWholeSaberToColor(unsigned int color[3]) {
+void setWholeSaberToColor(CRGB color) {
     for (int led = 0; led < NUM_LEDS; led++) {
-        leds[led] = CRGB( color[0], color[1], color[2]);
+        leds[led] = color;
     }
     FastLED.show();
 }
@@ -114,9 +117,15 @@ void setWholeSaberToColor(unsigned int color[3]) {
 // Loop over all the LEDs in the saber, but each time we run the loop, we'll only turn on the LEDs up to a certain point
 // So we get the effect of the lightsaber coming on 1 pixel at a time
 void ActivateSaber() {
-  for (int led = 0; led <= NUM_LEDS / 2; led += ledsPerFrame) {
-      for (int i = 0; i <= led; i++) {
+  for (int led = 1; led <= NUM_LEDS / 2; led += ledsPerFrame) {
+      for (int i = 1; i <= led; i++) {
           // Since it's 2 LED strips and the tip is in the middle, we have to turn on 2 pixels, one on each side of the blade
+
+          // Set the current LED to white
+          leds[i] = CRGB(255,255,255);
+          leds[NUM_LEDS-i] = CRGB(255,255,255);
+
+          // Set the last LED to the proper color
           leds[i] = colorOptions[colorIndex];
           leds[NUM_LEDS-i] = colorOptions[colorIndex];
       }
