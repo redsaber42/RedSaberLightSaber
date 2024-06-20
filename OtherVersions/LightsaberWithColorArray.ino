@@ -74,8 +74,13 @@ void loop() {
           colorIndex = 0;
         }
 
-        // Change the saber to that color
-        setWholeSaberToColor(colorOptions[colorIndex]);
+        // Change the saber to that color (if the saber is on)
+        if (activated) {
+          setWholeSaberToColor(colorOptions[colorIndex]);
+        }
+
+        // Save that color
+        EEPROM.write(0, colorIndex);
 
         // And we reset these variables so we can go back to looking for clicks
         timePress = 0;
