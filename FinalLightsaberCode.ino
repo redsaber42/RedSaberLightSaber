@@ -39,15 +39,13 @@ void setup() {
   unsigned int off[3] = { 0, 0, 0 };
   setWholeSaberToColor(off);
   
-  pinMode(BUTTON_PIN, INPUT);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
 }
 
 void loop() {
     int buttonState = digitalRead(BUTTON_PIN);
-    pinMode(BUTTON_PIN, OUTPUT);
-    digitalWrite(BUTTON_PIN, LOW);
 
-    if (buttonState == HIGH){
+    if (buttonState == LOW) {
       delay(200);
       
       if (clicks == 0) {
@@ -93,7 +91,7 @@ void loop() {
             rgbColor[incColor] += 1;
             
             
-            if (digitalRead(BUTTON_PIN) == HIGH) {
+            if (digitalRead(BUTTON_PIN) == LOW) {
               r = rgbColor[0];
               g = rgbColor[1];
               b = rgbColor[2];
