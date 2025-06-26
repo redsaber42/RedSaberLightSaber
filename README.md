@@ -16,7 +16,7 @@ e) In that popup, search 'Arduino Nano' on the left side and select your board o
 f) Left of that dropdown there should be an arrow (->), press that to upload to the board
 <br><br>
 
-**STEP 3: USING**
+**STEP 3: USING**<br>
 Your saber is now ready to go!!!!<br>
 Single click to 'activate' or 'deactivate' the blade. (Note that even when the blade is off the Arduino will still use some power, so you have the kill switch to depower the saber completely when you're not using it).<br>
 Double click to start color change mode (the saber will smoothly go through a bunch of colors. Single click to pick the current color (the board will save that so you can turn it off and on and it will remember the color).<br>
