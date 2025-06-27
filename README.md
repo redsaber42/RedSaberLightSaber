@@ -23,7 +23,7 @@ Double click to start color change mode (the saber will smoothly go through a bu
 <br>
 
 ## Troubleshooting
-*The Arduino isn't turning on!* <br>
+**The Arduino isn't turning on!** <br>
 If none of the lights on the Arduino board are turning on, it isn't getting any power.<br>
 Try directly connecting the battery's positive wire to the Arduino's VIN and the battery's negative wire to the Arduino's GND.<br>
 - If the Arduino lights up, the battery has at least some charge and you probably miswired the switch.<br>
@@ -31,13 +31,13 @@ Try directly connecting the battery's positive wire to the Arduino's VIN and the
 
 <br>
 
-*The Arduino turns on, but the LEDs don't light up!* <br>
+**The Arduino turns on, but the LEDs don't light up!** <br>
 If the Arduino lights up, you know the power wiring is fine, but there are a couple of issues it could be. In the Arduino IDE, go to `File>Examples>FastLED>DemoReel100` and upload that. It should make a bunch of cool RGB effects on the first 64 LEDs. Whether this works will help narrow down the problem:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;- If the `DemoReel100` program *does* work, you know the LED wiring is fine and the power wiring is fine. Most likely the button wiring is wrong. (It's quite likely you did it correctly according to the video, but the way I said to do it there was not the best. So I changed the code to work with the wiring from the image above and you need to do it according to that for it to work.)
-&nbsp;&nbsp;&nbsp;&nbsp;- If the `DemoReel100` program does *not* work, it's most likely the wiring between the Arduino and the LEDs, so double check that. Also keep in mind the direction of data. On the LED strips there should be arrows going from one end to the other, you want the Arduino to be connected the the side of the LEDs the arrows point *from* like this:<br>
-arduino wires connect here (data flows in) -> -> -> -> (data flows out) connect to other strip here<br>
+- If the `DemoReel100` program **does** work, you know the LED wiring is fine and the power wiring is fine. Most likely the button wiring is wrong. (It's quite likely you did it correctly according to the video, but the way I said to do it there was not the best. So I changed the code to work with the wiring from the image above and you need to do it according to that for it to work.)<br>
+- If the `DemoReel100` program does **not** work, it's most likely the wiring between the Arduino and the LEDs, so double check that. Also keep in mind the direction of data. On the LED strips there should be arrows going from one end to the other, you want the Arduino to be connected the the side of the LEDs the arrows point *from* like this:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arduino wires connect here (data flows in) -> -> -> -> (data flows out) connect to other strip here<br>
 
 <br>
 
-*Some other problem, or you tried the above steps and they didn't work!* <br>
+**Some other problem, or you tried the above steps and they didn't work!** <br>
 You can join the Discord at [https://discord.gg/eXy58xz8kP](https://discord.gg/eXy58xz8kP). There is a channel called `#forum` where you can make a post or a channel called `#diy-lightsabers` where you can ask any smaller questions as well.
